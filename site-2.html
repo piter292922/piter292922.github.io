@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurs niderlandzkiego | Klaudia Pacia</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* ======================
+       BRAND COLORS
+    ====================== */
+
+    :root {
+      --navy: #0f1e33;
+      --gold: #c7a45a;
+      --cream: #f7f3ee;
+      --text: #2c2c2c;
+    }
+
+    /* ======================
+       RESET
+    ====================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    /* ======================
+       HEADER
+    ====================== */
+
+    header {
+      background: var(--navy);
+      color: white;
+      position: fixed;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 0;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-size: 22px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ======================
+       HERO
+    ====================== */
+
+    .hero {
+      padding-top: 170px;
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 54px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 14px 34px;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .btn-gold:hover {
+      background: white;
+    }
+
+    /* ======================
+       GOLD DIVIDER
+    ====================== */
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 20px 0 40px 0;
+    }
+
+    /* ======================
+       LIGHT SECTION
+    ====================== */
+
+    .light-section {
+      background: white;
+    }
+
+    .light-box {
+      padding: 60px;
+      border: 1px solid #ece6dc;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media(max-width: 991px) {
+      .light-box {
+        padding: 30px;
+        flex-direction: column-reverse;
+      }
+    }
+
+    .about-img {
+      flex: 1 0 350px;
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      height: 350px;
+      width: 350px;
+    }
+
+    @media(max-width: 991px) {
+      .about-img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ======================
+       DARK SECTION
+    ====================== */
+
+    .dark-section {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+
+    .dark-section h2 {
+      color: white;
+    }
+
+    /* ======================
+       BENEFITS GRID
+    ====================== */
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 40px;
+    }
+
+    .benefit {
+      background: white;
+      padding: 35px;
+      border: 1px solid #e9e3da;
+    }
+
+    .benefit h3 {
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    /* ======================
+       QUOTE
+    ====================== */
+
+    .quote {
+      font-style: italic;
+      font-size: 20px;
+      max-width: 750px;
+      margin: auto;
+      position: relative;
+    }
+
+    .quote::before {
+      content: "“";
+      font-size: 60px;
+      color: var(--gold);
+      position: absolute;
+      left: -30px;
+      top: -20px;
+    }
+
+    /* ======================
+       CTA SECTION
+    ====================== */
+
+    .cta {
+      background: var(--gold);
+      color: var(--navy);
+      text-align: center;
+    }
+
+    .cta h2 {
+      margin-bottom: 25px;
+    }
+
+    /* ======================
+       FOOTER
+    ====================== */
+
+    footer {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 40px 0;
+      font-size: 14px;
+    }
+
+    /* ======================
+       RESPONSIVE
+    ====================== */
+
+    @media(max-width: 992px) {
+
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <div class="logo">Klaudia Pacia</div>
+    <nav>
+      <ul>
+        <li><a href="#">O mnie</a></li>
+        <li><a href="#">Kurs</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Język niderlandzki w eleganckiej, skutecznej formie</h1>
+    <p>Autorski kurs online oparty na doświadczeniu zdobytym w Belgii i Holandii.</p>
+    <a href="#" class="btn-gold">Rozpocznij naukę</a>
+  </div>
+</section>
+
+<section class="light-section">
+  <div class="container light-box">
+    <div class="about-img">
+      <img src="/img/Klaudia_III-15.jpg" alt="">
+    </div>
+    <div>
+      <h2>O mnie</h2>
+      <div class="divider"></div>
+      <p>Cześć! Nazywam się Klaudia Pacia, jestem Polką z pasją do języków i nauczania. Moja droga akademicka rozpoczęła się na Katolickim Uniwersytecie Lubelskim, gdzie uzyskałam tytuł licencjata. W tym czasie spędziłam semestr za granicą na Radboud Universiteit w Nijmegen w Holandii. Następnie ukończyłam studia magisterskie z filologii niderlandzkiej  na uniwersytecie w Leuven w Belgii. Aby sfinansować studia, pracowałam jako nauczycielka języka niderlandzkiego w agencji pracy w Westland w Holandii i odkryłam tam swój talent do motywowania studentów do nauki i mówienia.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <h2>Dlaczego ten kurs działa?</h2>
+    <div class="divider" style="margin:auto; background:white;"></div>
+    <p class="quote">Moim celem jest, abyś mówił/a naturalnie i pewnie — bez blokad językowych.</p>
+  </div>
+</section>
+
+<section class="light-section">
+  <div class="container">
+    <h2 style="margin-bottom:30px;">Korzyści</h2>
+    <div class="divider"></div>
+    <div class="benefits">
+      <div class="benefit">
+        <h3>Komunikacja od pierwszego dnia</h3>
+        <p>Uczysz się praktycznych dialogów.</p>
+      </div>
+      <div class="benefit">
+        <h3>Elastyczny dostęp</h3>
+        <p>Uczysz się w swoim tempie.</p>
+      </div>
+      <div class="benefit">
+        <h3>Sprawdzone metody</h3>
+        <p>13 lat doświadczenia w jednym programie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Gotowa/y, aby zacząć?</h2>
+    <a href="#" class="btn-gold">Kup kurs</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Klaudia Pacia | Wszystkie prawa zastrzeżone
+</footer>
+
+</body>
+</html>
